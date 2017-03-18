@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :user_confirm, only: [:edit, :update]
   
   def show
     @user = User.find(params[:id])
@@ -33,6 +34,13 @@ class UsersController < ApplicationController
   end
 
   private
+  
+  def user_confirm
+    @user = User.find(params[:id]) 
+    unless @user == current_user
+      redirect_to(root_url)
+    end
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password,
