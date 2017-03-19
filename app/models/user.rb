@@ -7,4 +7,5 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
     validates :location, presence: true,on: :update
     has_secure_password
+    has_many :microposts
 end

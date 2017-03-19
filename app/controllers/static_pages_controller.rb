@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
   def home
-    @user = User.all
+    @micropost = current_user.microposts.build if logged_in?
   end
 end
