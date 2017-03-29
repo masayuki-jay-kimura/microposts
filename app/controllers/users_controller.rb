@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :following, :followers, :destroy]
-  before_action :user_confirm, only: [:edit, :update, :following, :followers]
+  before_action :user_confirm, only: [:edit, :update]
   
   def show
     @user = User.find(params[:id])

@@ -6,6 +6,20 @@
         <%= @user.name %>
       </h1>
     </section>
+    <div class ="user_status">
+      <div class="follow_infomation">
+          <h3>following</h3>
+          <a href = "<%= following_user_path(@user) %>">
+          <%= @user.following_relationships.count %>
+          </a>
+      </div>
+      <div class="follow_infomation">
+          <h3>follower</h3>
+          <a href = "<%= followers_user_path(@user) %>">
+          <%= @user.follower_relationships.count %>
+          </a>
+      </div>
+    </div>
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>

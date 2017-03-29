@@ -9,8 +9,8 @@
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
+    <h3>Follower (<%= @users.count %>)</h3>
     <% if @users.any? %>
-      <h3>Follower (<%= @users.count %>)</h3>
       <div class="follow_list">
         <ul> 
           <% @users.each do |user| %>
