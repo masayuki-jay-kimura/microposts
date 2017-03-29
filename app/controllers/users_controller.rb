@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :destroy]
-  before_action :user_confirm, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :following, :destroy]
+  before_action :user_confirm, only: [:edit, :following, :update]
   
   def show
     @user = User.find(params[:id])
@@ -32,6 +32,11 @@ class UsersController < ApplicationController
       # 保存に失敗した場合は編集画面へ戻す
       render 'edit'
     end
+  end
+  
+  def following
+    @user = User.find(params[:id]) 
+    @users = @user.following_users
   end
 
   private
