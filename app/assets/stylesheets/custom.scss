@@ -139,6 +139,36 @@ aside {
   margin-right: 10px;
 }
 
+.user_status {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  .follow_infomation {
+    float: left;
+    text-align: center;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    h3 {
+      font-size: 16px;
+    }
+    a {
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+      }
+    }
+    strong {
+    display: block;
+    } 
+  }
+}
+
+
 /* microposts */
 
 .microposts {
@@ -176,5 +206,26 @@ aside {
   textarea {
     height: 100px;
     margin-bottom: 5px;
+  }
+}
+
+/* follow folloer */
+
+.follow_list {
+  ul {
+    padding-left:0;
+  }
+  .follow_list__eachArea {
+    display:block;
+    height:70px;
+    border-top: 1px solid #e8e8e8;
+    li {
+      float:left;
+      list-style-type: none;
+      margin-top:10px;
+      &:last-child {
+        margin-top:23px;
+      }
+    }
   }
 }
