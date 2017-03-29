@@ -11,12 +11,16 @@
     <%= render 'follow_form' if logged_in? %>
     <% if @users.any? %>
       <h3>Following (<%= @users.count %>)</h3>
-      <ul> 
-        <% @users.each do |user| %>
-          <li><%= link_to gravatar_for(user, size: 50), user %></li>
-          <li><%= link_to user.name, user %></li>
-        <% end %>
-      </ul>
+      <div class="follow_list">
+          <ul> 
+          <% @users.each do |user| %>
+            <div class="follow_list__eachArea">
+              <li><%= link_to gravatar_for(user, size: 50), user %></li>
+              <li><%= link_to user.name, user %></li>
+            </div>
+          <% end %>
+        </ul>
+      </div>
     <% end %>
   </div>
 </div>
